@@ -5,12 +5,12 @@ cache:
   bundler: true
   directories:
     - node_modules
+    - $HOME/.nvm
 script: ./script/cibuild
 before_install:
   - nvm install node
   - node --version
   - npm install
-  - echo $PATH
   - "[[ $(phantomjs --version) > '2' ]] || npm install -g phantomjs-prebuilt"
   - which phantomjs && phantomjs --version
 env:
